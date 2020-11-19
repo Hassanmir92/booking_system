@@ -11,7 +11,7 @@ class BookingSystem
   end
 
   def initialize(content)
-    @booking_requests_texts = content.split(/,\r\n/)
+    @booking_requests_texts = content.split(/,\r\n|\r\n/)
     @rejected_requests = []
   end
 
