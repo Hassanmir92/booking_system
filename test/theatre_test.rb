@@ -18,4 +18,16 @@ class TheatreTest < Minitest::Test
     assert_equal false, theatre.accept_booking(booking_request)
     assert_equal 0, theatre.bookings.count
   end
+
+  def test_reserved_seats
+    theatre = Theatre.new
+
+    booking_request = BookingRequest.new('(1,84:5,84:7)')
+    theatre.accept_booking(booking_request)
+
+    booking_request = BookingRequest.new('(1,84:20,84:23)')
+    theatre.accept_booking(booking_request)
+
+    assert_equal 7, theatre.reserved_seats.count
+  end
 end
