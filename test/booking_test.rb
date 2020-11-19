@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
-require_relative '../lib/booking'
-require_relative '../lib/booking_request'
-require_relative '../lib/theatre'
 
 class BookingTest < Minitest::Test
   def setup

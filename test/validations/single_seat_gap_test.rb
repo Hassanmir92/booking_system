@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 require_relative '../test_helper'
-require_relative '../../lib/booking_request'
-require_relative '../../lib/booking'
-require_relative '../../lib/theatre'
-require_relative '../../lib/validations/seat_availabilities'
 
 module Validations
   class SingleSeatGapTest < Minitest::Test
@@ -12,10 +8,7 @@ module Validations
       @theatre = Theatre.new
 
       booking_request = BookingRequest.new('(1,84:5,84:7)')
-      booking = Booking.new(@theatre, booking_request)
-      booking.accept_request
-
-      @theatre.bookings.push(booking)
+      @theatre.accept_booking(booking_request)
     end
 
     def test_valid?

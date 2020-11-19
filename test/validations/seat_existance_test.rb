@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require_relative '../test_helper'
-require_relative '../../lib/booking_request'
-require_relative '../../lib/validations/seat_existance'
 
 module Validations
   class SeatExistanceTest < Minitest::Test

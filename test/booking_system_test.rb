@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
-require_relative '../lib/booking_system'
 
 class BookingSystemTest < Minitest::Test
   def setup
