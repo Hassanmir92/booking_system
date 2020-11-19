@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require './lib/booking_system'
+
+puts 'Processing...'
+
+booking_system = BookingSystem.process(ARGV.first)
+
+puts "Number of rejected bookings: #{booking_system.number_of_rejected_bookings}"
