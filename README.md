@@ -16,5 +16,8 @@ The problem is solved using Ruby with minitest as the testing framework.
 ## Running test:
 `rake test`
 
+## Running rubocop for code format offenses:
+`rake rubocop`
+
 ## Running example:
 `bin/booking_system examples/booking_requests`
