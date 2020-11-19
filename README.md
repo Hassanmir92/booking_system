@@ -14,7 +14,7 @@ Note: The trailing comma can be absent on the final line.
 The problem is solved using Ruby with minitest as the testing framework.
 
 ## Running test:
-rake test
+`rake test`
 
 ## Running example:
-bin/booking_system examples/booking_requests
+`bin/booking_system examples/booking_requests`
