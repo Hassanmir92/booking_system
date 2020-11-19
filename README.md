@@ -6,7 +6,7 @@ This system processes a text file of bookings and determines the number of booki
 
 The text file of bookings contains one booking per line, where a booking is of the following form:
 
-(<id>,<index of first seat row>:<index of first seat within row>,<index of last seat row>:<index of last seat within row>),
+([id],[index of first seat row]:[index of first seat within row],[index of last seat row]:[index of last seat within row]),
 
 Note: The trailing comma can be absent on the final line.
 
