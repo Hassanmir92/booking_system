@@ -27,7 +27,8 @@ class Booking
   private
 
   def can_accept_request?
-    seats_exist? &&
+    booking_request.valid_format? &&
+      seats_exist? &&
       seats_on_the_same_row? &&
       fewer_than_or_equal_to_five_seats? &&
       all_seats_currently_available? &&

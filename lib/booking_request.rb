@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
+require_relative 'validations/request_format'
+
 class BookingRequest
-  attr_reader :request_array
+  attr_reader :request, :request_array
 
   def initialize(request)
+    @request = request
     @request_array = request.gsub(/[()]/, '').split(',')
+  end
+
+  def valid_format?
+    Validations::RequestFormat.valid?(request)
   end
 
   def id

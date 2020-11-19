@@ -3,6 +3,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 
+require_relative '../lib/validations/request_format'
 require_relative '../lib/validations/same_row_seat'
 require_relative '../lib/validations/seat_availabilities'
 require_relative '../lib/validations/seat_existance'

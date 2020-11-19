@@ -15,6 +15,14 @@ class BookingTest < Minitest::Test
     assert_equal 3, booking.seats.count
   end
 
+  def test_accept_request_when_request_format_validation_fails
+    booking_request = BookingRequest.new('(1,84:5,85')
+    booking = Booking.new(@theatre, booking_request)
+
+    assert_equal false, booking.accept_request
+    assert_equal 0, booking.seats.count
+  end
+
   def test_accept_request_when_seat_row_validation_fails
     booking_request = BookingRequest.new('(1,84:5,85:7)')
     booking = Booking.new(@theatre, booking_request)

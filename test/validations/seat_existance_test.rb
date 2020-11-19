@@ -10,7 +10,7 @@ module Validations
     end
 
     def test_valid_when_seat_does_not_exist_given_row_and_seat_number
-      booking_request = BookingRequest.new('(1,84:58,109:7)')
+      booking_request = BookingRequest.new('(1,84:58,84:7)')
       assert_equal false, Validations::SeatExistance.valid?(booking_request)
     end
   end

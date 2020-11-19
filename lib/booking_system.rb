@@ -4,7 +4,7 @@ require_relative 'theatre'
 require_relative 'booking_request'
 
 class BookingSystem
-  attr_reader :booking_requests_texts
+  attr_reader :booking_requests_texts, :rejected_requests
 
   def self.process(requests_file_path)
     new(File.open(requests_file_path).read).process
@@ -21,7 +21,7 @@ class BookingSystem
     booking_requests_texts.each do |booking_request_text|
       booking_request = BookingRequest.new(booking_request_text)
 
-      @rejected_requests.push(booking_request_text) unless @theatre.accept_booking(booking_request)
+      rejected_requests.push(booking_request_text) unless @theatre.accept_booking(booking_request)
     end
 
     self
