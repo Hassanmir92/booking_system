@@ -14,28 +14,45 @@ module Validations
     end
 
     def valid?
-      one_seat_before_the_first_seat = theatre.reserved_seats.find do |reserved_seat|
+      !single_gap_before_first_seat? && !single_gap_after_last_seat?
+    end
+
+    private
+
+    def single_gap_before_first_seat?
+      one_seat_before_the_first_seat_available? && !two_seat_before_the_first_seat_available?
+    end
+
+    def single_gap_after_last_seat?
+      one_seat_after_the_last_seat_available? && !two_seat_after_the_last_seat_available?
+    end
+
+    def one_seat_before_the_first_seat_available?
+      theatre.reserved_seats.find do |reserved_seat|
         reserved_seat.seat_row_index == booking_request.first_seat_row_index &&
           reserved_seat.seat_index == booking_request.first_seat_index - 1
-      end
+      end.nil?
+    end
 
-      two_seat_before_the_first_seat = theatre.reserved_seats.find do |reserved_seat|
+    def two_seat_before_the_first_seat_available?
+      theatre.reserved_seats.find do |reserved_seat|
         reserved_seat.seat_row_index == booking_request.first_seat_row_index &&
           reserved_seat.seat_index == booking_request.first_seat_index - 2
-      end
+      end.nil?
+    end
 
-      one_seat_after_the_last_seat = theatre.reserved_seats.find do |reserved_seat|
+    def one_seat_after_the_last_seat_available?
+      theatre.reserved_seats.find do |reserved_seat|
         reserved_seat.seat_row_index == booking_request.last_seat_row_index &&
           reserved_seat.seat_index == booking_request.last_seat_index + 1
-      end
+      end.nil?
+    end
 
-      two_seat_after_the_last_seat = theatre.reserved_seats.find do |reserved_seat|
+    def two_seat_after_the_last_seat_available?
+      theatre.reserved_seats.find do |reserved_seat|
         reserved_seat.seat_row_index == booking_request.last_seat_row_index &&
           reserved_seat.seat_index == booking_request.last_seat_index + 2
-      end
-
-      !(one_seat_before_the_first_seat.nil? && !two_seat_before_the_first_seat.nil?) &&
-        !(one_seat_after_the_last_seat.nil? && !two_seat_after_the_last_seat.nil?)
+      end.nil?
     end
   end
 end
