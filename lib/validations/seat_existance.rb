@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Validations
+  # This class is responsible for checking the validation of whether there are any
+  # non-existant seats within the booking request
   class SeatExistance
     attr_reader :booking_request
 

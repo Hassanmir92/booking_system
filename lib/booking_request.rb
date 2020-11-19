@@ -2,6 +2,8 @@
 
 require_relative 'validations/request_format'
 
+# This class represents the booking request and is responsible
+# for building the methods of a booking request given a single string with a valid format
 class BookingRequest
   attr_reader :request, :request_array
 

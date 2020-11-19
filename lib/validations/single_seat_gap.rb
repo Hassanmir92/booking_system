@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Validations
+  # This class is responsible for checking the validation of the booking leaves
+  # a single seat gap in the theatre given the booking request
   class SingleSeatGap
     attr_reader :theatre, :booking_request
 

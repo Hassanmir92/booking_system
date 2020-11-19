@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Validations
+  # This class is responsible for checking the validation of whether the seats are on the same row
+  # given the booking request
   class SameRowSeat
     attr_reader :booking_request
 

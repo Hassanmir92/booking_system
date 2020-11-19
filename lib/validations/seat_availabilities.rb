@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Validations
+  # This class is responsible for checking the validation of whether any of the seats
+  # with the booking string are already reserved given the booking request and theatre
   class SeatAvailabilities
     attr_reader :theatre, :booking_request
 

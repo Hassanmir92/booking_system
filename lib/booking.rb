@@ -7,6 +7,7 @@ require_relative 'validations/seat_existance'
 require_relative 'validations/seat_quantity'
 require_relative 'validations/single_seat_gap'
 
+# This class represents the booking made given that it can be accepted
 class Booking
   attr_reader :booking_request, :theatre, :seats
 

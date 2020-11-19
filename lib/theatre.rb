@@ -2,6 +2,7 @@
 
 require_relative 'booking'
 
+# This class represents the theate with the ability to accept and hold bookings
 class Theatre
   attr_reader :bookings
 

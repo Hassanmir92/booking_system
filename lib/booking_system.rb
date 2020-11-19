@@ -3,6 +3,8 @@
 require_relative 'theatre'
 require_relative 'booking_request'
 
+# This class is responsible for processing the booking system given a file path
+# with booking request lines
 class BookingSystem
   attr_reader :booking_requests_texts, :rejected_requests
 
