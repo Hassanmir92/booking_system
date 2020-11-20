@@ -11,6 +11,7 @@ require_relative '../lib/validations/seat_quantity'
 require_relative '../lib/validations/single_seat_gap'
 
 require_relative '../lib/booking_request'
+require_relative '../lib/booking_requests_factory'
 require_relative '../lib/booking_system'
 require_relative '../lib/booking'
 require_relative '../lib/seat'
